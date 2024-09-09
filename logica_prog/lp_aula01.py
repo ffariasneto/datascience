@@ -27,3 +27,12 @@ lado2 = float(input("Digite o valor do segundo lado do quadrado: "))
 area = lado1 * lado2
 dobro = area * 2
 print(f"A área do quadrado é: {area} e o dobro desta área é: {dobro}")
+
+''' 5. Faça um programa que pergunte quanto você ganha por hora
+e o número de horas trabalhadas no mês. Calcule e mostre o total
+do seu salário no referido mês.
+'''
+sal_h = float(input("Qua o valor da sua hora trabalhada? "))
+qtd_h = float(input("Quantas horas você trabalha no mês? "))
+salario = sal_h * qtd_h
+print(f"O valor do seu salário no mês, é de: R$ {salario}.")
