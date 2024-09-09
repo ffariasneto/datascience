@@ -12,3 +12,9 @@ nota4 = float(input("Digite a nota do quarto bimestre: "))
 soma = nota1 + nota2 + nota3 + nota4
 media = soma / 4
 print(f"A média do aluno no ano, foi: {media}.")
+
+# 3. Faça um programa que converta metros para centímetros.
+print("Conversor de Metros para Centímetros")
+metro = float(input("Digite o valor em metros: "))
+conv = metro * 100
+print(f"{metro} m, equivale a {conv} cm.")
