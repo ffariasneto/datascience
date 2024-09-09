@@ -18,3 +18,12 @@ print("Conversor de Metros para Centímetros")
 metro = float(input("Digite o valor em metros: "))
 conv = metro * 100
 print(f"{metro} m, equivale a {conv} cm.")
+
+''' 4. Faça um programa que calcule a área de um quadrado, em
+seguida mostre o dobro desta área para o usuário.
+'''
+lado1 = float(input("Digite o valor do primeiro lado do quadrado: "))
+lado2 = float(input("Digite o valor do segundo lado do quadrado: "))
+area = lado1 * lado2
+dobro = area * 2
+print(f"A área do quadrado é: {area} e o dobro desta área é: {dobro}")
