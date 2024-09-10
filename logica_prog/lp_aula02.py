@@ -21,6 +21,10 @@ Senão, exiba a mensagem: Senha incorreta. Tente novamente.
 4. Enquanto o usuário não confirmar, o seu programa exibirá a mensagem:
 "Senha incorreta, tente novamente."
 '''
+
+''' Código já adionado com número de tentativas, caso o usuário erre três vezes a senha, o mesmo
+será bloqueado. - Aula 04
+'''
 tentativas = 0
 print("Olá! Sem bem-vindo(a) a tela de cadastro de usuário:")
 print("Por favor, cadastre uma senha abaixo:")
