@@ -16,3 +16,7 @@ class Calculadora:
 a = float(input("Digite o primeiro número: "))
 b = float(input("Digite o segundo número: "))
 calc = Calculadora()
+print("Soma: ", calc.soma(a, b))
+print("Subtração: ", calc.subtracao(a, b))
+print("Multiplicação: ", calc.multiplicacao(a, b))
+print("Divisão: ", calc.divisao(a, b))
