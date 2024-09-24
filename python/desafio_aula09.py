@@ -186,6 +186,3 @@ while continuar == True:
 
     else:
         print("Opção inválida!")
-
- 
-
