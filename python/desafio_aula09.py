@@ -40,9 +40,8 @@ class Conta_poupanca(Conta):
         self.juros = juros
 
     def depositar(self, valor):
-        super().depositar(self)
-        print("Depósito realizado com sucesso!")
-        self.aplicar_juros
+        self.saldo += valor
+        self.aplicar_juros()
     
     def aplicar_juros(self):
         rendimento = self.saldo * self.juros
