@@ -3,20 +3,34 @@ class Conta:
         self.numero = numero
         self.titular = titular
         self.saldo = saldo
-    
+        self.resumo = []
+
+    def registrar_movimentacao(self, tipo, valor):
+        self.resumo.append(f"{tipo}: {valor:.2f}")
+            
     def sacar(self, valor):
         if self.saldo >= valor:
             self.saldo -= valor
+            self.registrar_movimentacao("Saque", valor)
             print("Saque realizado com sucesso!")
         else:
             print("Saldo insuficiente!")
     
     def depositar(self, valor):
         self.saldo += valor
+        self.registrar_movimentacao("Depósito", valor)
         print("Deposito realizado com sucesso!")
     
     def saldo_atual(self):
         return self.saldo
+    
+    def mostrar_resumo_movimentacoes(self):
+        if self.resumo:
+            print(f"Resumo das movimentações da conta {self.numero}.")
+            for movimento in self.resumo:
+                print(movimento)
+        else:
+            print("Nenhuma movimentação encontrada!")
     
 class Conta_corrente(Conta):
     def __init__(self, numero, titular, saldo, limite):
@@ -26,6 +40,7 @@ class Conta_corrente(Conta):
     def sacar(self, valor):
         if self.saldo + self.limite >= valor:
             self.saldo -= valor
+            self.registrar_movimentacao("Saque com cheque especial", valor)
             print("Saque realizado com sucesso!")
         else:
             print("Saldo insuficiente, mesmo com o cheque especial!")
@@ -41,11 +56,13 @@ class Conta_poupanca(Conta):
 
     def depositar(self, valor):
         self.saldo += valor
+        self.registrar_movimentacao("Depósito", valor)
         self.aplicar_juros()
     
     def aplicar_juros(self):
         rendimento = self.saldo * self.juros
         self.saldo += rendimento
+        self.registrar_movimentacao("Aplicação dos juros", rendimento)
         print(f"Juros aplicados! Saldo atual: R$ {self.saldo:.2f}")
 
 
@@ -58,6 +75,7 @@ while continuar == True:
     print("2 - Sacar dinheiro")
     print("3 - Depositar dinheiro")
     print("4 - Ver saldo")
+    print("5 - Resumo das Movimentações")
     print("8 - Listar Contas")
     print("9 - Sair")
 
@@ -136,6 +154,19 @@ while continuar == True:
                 conta_encontrada = True
                 break
 
+        if not conta_encontrada:
+            print("Conta não encontrada!")
+    
+    elif main == "5":
+        numero = input("Digite o número da conta: ")
+        conta_encontrada = False
+
+        for conta in ftibank:
+            if conta.numero == numero:
+                conta.mostrar_resumo_movimentacoes()
+                conta_encontrada = True
+                break
+        
         if not conta_encontrada:
             print("Conta não encontrada!")
 
